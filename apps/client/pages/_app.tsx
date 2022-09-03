@@ -1,18 +1,13 @@
-import { AppProps } from 'next/app';
-import Head from 'next/head';
-import './styles.css';
+import {SessionProvider} from 'next-auth/react';
+import './styles.scss';
 
-function CustomApp({ Component, pageProps }: AppProps) {
+// Use of the <SessionProvider> is mandatory to allow components that call
+// `useSession()` anywhere in your application to access the `session` object.
+export default function App({Component, pageProps}) {
+
   return (
-    <>
-      <Head>
-        <title>Welcome to client!</title>
-      </Head>
-      <main className="app">
-        <Component {...pageProps} />
-      </main>
-    </>
+    <SessionProvider session={pageProps.session} refetchInterval={0}>
+      <Component {...pageProps} />
+    </SessionProvider>
   );
 }
-
-export default CustomApp;
