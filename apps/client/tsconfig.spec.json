@@ -3,11 +3,14 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "module": "commonjs",
-    "types": ["jest", "node"],
+    "types": [
+      "jest",
+      "node"
+    ],
     "jsx": "react"
   },
   "include": [
-    "jest.config.ts",
+    "jest.config.js",
     "**/*.test.ts",
     "**/*.spec.ts",
     "**/*.test.tsx",
