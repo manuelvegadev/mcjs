@@ -10,11 +10,11 @@ import * as CarbonIcons from '@carbon/icons-react';
 export function StaticSideNav({ items }) {
   return (
     <SideNav
-      isFixedNav={false}
+      isFixedNav={true}
       expanded={true}
       isChildOfHeader={true}
       aria-label="Side navigation"
-      style={{ position: 'relative', top: 0 }}
+      // style={{ position: 'relative', top: 0 }}
     >
       <SideNavItems>
         {items.map(({ href, renderIcon, subItems, title }, itemIndex) => {
