@@ -18,12 +18,6 @@ import { Logout, Terminal } from '@carbon/icons-react';
 export function Header({ isSideNavExpanded, onClickSideNavExpand }) {
   // [<path>, <title>]
   const navItems = [
-    // ['/client', 'Client'],
-    // ['/server', 'Server'],
-    // ['/protected', 'Protected'],
-    // ['/api-example', 'API'],
-    // ['/admin', 'Admin'],
-    // ['/me', 'Me']
     ['/instances', 'Instances'],
     ['/io', 'io'],
   ];
