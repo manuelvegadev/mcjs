@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import { signOut } from 'next-auth/react';
 import {
   Header as CarbonHeader,
   HeaderGlobalAction,
@@ -13,7 +12,8 @@ import {
   SideNavMenuItem,
   SkipToContent,
 } from '@carbon/react';
-import { Logout, Terminal } from '@carbon/icons-react';
+import { Logout } from '@carbon/icons-react';
+import { supabaseClient } from '@supabase/auth-helpers-nextjs';
 
 export function Header({ isSideNavExpanded, onClickSideNavExpand }) {
   // [<path>, <title>]
@@ -23,6 +23,12 @@ export function Header({ isSideNavExpanded, onClickSideNavExpand }) {
   ];
 
   const router = useRouter();
+
+  async function logOut() {
+    const { error } = await supabaseClient.auth.signOut();
+    if (error) return console.error('Error logging out:', error.message);
+    await router.push('/');
+  }
 
   return (
     <CarbonHeader aria-label="IBM Platform Name">
@@ -60,7 +66,7 @@ export function Header({ isSideNavExpanded, onClickSideNavExpand }) {
       <HeaderGlobalBar>
         <HeaderGlobalAction
           aria-label="Logout"
-          onClick={signOut}
+          onClick={logOut}
           tooltipAlignment="end"
         >
           <Logout size={20} />

@@ -1,6 +1,6 @@
-import Header from './header';
 import { Column, Content, Grid, HeaderContainer } from '@carbon/react';
-import Footer from './footer';
+import { Header } from '../header';
+import { Footer } from '../footer';
 
 export function Layout({ children }) {
   return (

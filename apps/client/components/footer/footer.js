@@ -1,9 +1,7 @@
-import Link from 'next/link';
-import styles from './footer.module.scss';
-import packageJSON from '../../../package.json';
+import packageJSON from '../../../../package.json';
 import { Column, Grid } from '@carbon/react';
 
-export default function Footer() {
+export function Footer() {
   return (
     <Grid>
       <Column sm={4} md={8} lg={16}>
@@ -12,3 +10,5 @@ export default function Footer() {
     </Grid>
   );
 }
+
+export default Footer;
