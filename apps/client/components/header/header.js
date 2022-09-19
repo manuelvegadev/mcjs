@@ -58,9 +58,6 @@ export function Header({ isSideNavExpanded, onClickSideNavExpand }) {
         ))}
       </HeaderNavigation>
       <HeaderGlobalBar>
-        <HeaderGlobalAction aria-label="Terminal" onClick={() => {}}>
-          <Terminal size={20} />
-        </HeaderGlobalAction>
         <HeaderGlobalAction
           aria-label="Logout"
           onClick={signOut}
