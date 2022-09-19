@@ -52,17 +52,17 @@ export default function Header(props) {
         MCJS
       </HeaderName>
       <HeaderNavigation aria-label="IBM [Platform]">
-        {navItems.map((item, index) => (
+        {navItems.map(([path, title], index) => (
           <HeaderMenuItem
-            href={item[0]}
+            href={path}
             key={index}
             onClick={(event) => {
               event.preventDefault();
-              return router.push(item[0]);
+              return router.push(path);
             }}
-            isCurrentPage={router.route === item[0]}
+            isCurrentPage={router.route === path}
           >
-            {item[1]}
+            {title}
           </HeaderMenuItem>
         ))}
       </HeaderNavigation>
@@ -84,17 +84,17 @@ export default function Header(props) {
         isPersistent={false}
       >
         <SideNavItems>
-          {navItems.map((item, index) => (
+          {navItems.map(([path, title], index) => (
             <SideNavMenuItem
-              href={item[0]}
+              href={path}
               key={index}
-              isActive={router.route === item[0]}
+              isActive={router.route === path}
               onClick={(event) => {
                 event.preventDefault();
-                return router.push(item[0]);
+                return router.push(path);
               }}
             >
-              {item[1]}
+              {title}
             </SideNavMenuItem>
           ))}
         </SideNavItems>
