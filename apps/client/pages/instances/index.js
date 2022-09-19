@@ -10,7 +10,7 @@ export function InstancesIndex() {
   return (
     <Layout>
       <Grid>
-        <Column lg={4}>
+        <Column sm={2} lg={4}>
           <ClickableTile
             style={{ display: 'Flex', gap: '1rem', height: '100%' }}
             href={'/instances/demo'}
@@ -24,7 +24,7 @@ export function InstancesIndex() {
           </ClickableTile>
         </Column>
 
-        <Column lg={4}>
+        <Column sm={2} lg={4}>
           <ClickableTile
             style={{ display: 'Flex', gap: '1rem', height: '100%' }}
             href={'/instances/new'}
