@@ -2,7 +2,7 @@ import Header from './header';
 import { Column, Content, Grid, HeaderContainer } from '@carbon/react';
 import Footer from './footer';
 
-export default function Layout({ children }) {
+export function Layout({ children }) {
   return (
     <HeaderContainer
       render={({ isSideNavExpanded, onClickSideNavExpand }) => (
@@ -21,3 +21,5 @@ export default function Layout({ children }) {
     />
   );
 }
+
+export default Layout;
