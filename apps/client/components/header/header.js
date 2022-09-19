@@ -15,10 +15,7 @@ import {
 } from '@carbon/react';
 import { Logout, Terminal } from '@carbon/icons-react';
 
-// The approach used in this component shows how to build a sign in and sign out
-// component that works on pages which support both client and server side
-// rendering, and avoids any flash incorrect content on initial page load.
-export default function Header(props) {
+export function Header({ isSideNavExpanded, onClickSideNavExpand }) {
   // [<path>, <title>]
   const navItems = [
     // ['/client', 'Client'],
@@ -38,8 +35,8 @@ export default function Header(props) {
       <SkipToContent />
       <HeaderMenuButton
         aria-label="Open menu"
-        onClick={props.onClickSideNavExpand}
-        isActive={props.isSideNavExpanded}
+        onClick={onClickSideNavExpand}
+        isActive={isSideNavExpanded}
       />
       <HeaderName
         href="/"
@@ -80,7 +77,7 @@ export default function Header(props) {
       </HeaderGlobalBar>
       <SideNav
         aria-label="Side navigation"
-        expanded={props.isSideNavExpanded}
+        expanded={isSideNavExpanded}
         isPersistent={false}
       >
         <SideNavItems>
