@@ -17,16 +17,16 @@ export function StaticSideNav({ items }) {
       style={{ position: 'relative', top: 0 }}
     >
       <SideNavItems>
-        {items.map((item, itemIndex) => {
-          if (item.subItems) {
+        {items.map(({ href, renderIcon, subItems, title }, itemIndex) => {
+          if (subItems) {
             return (
               <SideNavMenu
-                renderIcon={CarbonIcons[item.renderIcon]}
-                title={item.title}
+                renderIcon={CarbonIcons[renderIcon]}
+                title={title}
                 key={itemIndex}
                 large={true}
               >
-                {item.subItems.map((subItem, subItemIndex) => {
+                {subItems.map((subItem, subItemIndex) => {
                   return (
                     <SideNavMenuItem href={subItem.href} key={subItemIndex}>
                       {subItem.title}
@@ -38,11 +38,11 @@ export function StaticSideNav({ items }) {
           } else {
             return (
               <SideNavLink
-                renderIcon={CarbonIcons[item.renderIcon]}
-                href={item.href}
+                renderIcon={CarbonIcons[renderIcon]}
+                href={href}
                 key={itemIndex}
               >
-                {item.title}
+                {title}
               </SideNavLink>
             );
           }
