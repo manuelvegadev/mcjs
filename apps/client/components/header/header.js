@@ -99,3 +99,5 @@ export function Header({ isSideNavExpanded, onClickSideNavExpand }) {
     </CarbonHeader>
   );
 }
+
+export default Header;
