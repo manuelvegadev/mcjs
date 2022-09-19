@@ -1,6 +1,8 @@
-import Layout from '../../../components/layout';
-import StaticSideNav from '../../../components/StaticSideNav';
-import StaticSideNavContent from '../../../components/StaticSideNavContent';
+import {
+  Layout,
+  StaticSideNav,
+  StaticSideNavContent,
+} from '../../../components';
 
 export function instanceIndex() {
   const sideNavItems = [

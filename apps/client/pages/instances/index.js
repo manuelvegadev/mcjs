@@ -1,4 +1,4 @@
-import Layout from '../../components/layout';
+import { Layout } from '../../components';
 import { ClickableTile } from '@carbon/react/lib/components/Tile/next/Tile';
 import { Column, Grid, Heading } from '@carbon/react';
 import { Console, Download_01 } from '@carbon/pictograms-react';

@@ -1,4 +1,6 @@
-import Layout from '../components/layout';
+import { Layout } from '../components';
+import { withPageAuth } from '@supabase/auth-helpers-nextjs';
+import { Heading } from '@carbon/react';
 
 export default function IndexPage() {
   return (
