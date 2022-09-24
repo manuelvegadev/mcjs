@@ -1,9 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Serve server" type="js.build_tools.nx">
+  <configuration default="false" name="Serve prod client" type="js.build_tools.nx">
     <node-interpreter value="project" />
     <nxfile value="$PROJECT_DIR$/nx.json" />
     <tasks>
-      <task value="server:serve" />
+      <task value="client:serve:production" />
     </tasks>
     <envs />
     <method v="2" />
